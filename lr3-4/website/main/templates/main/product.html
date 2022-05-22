@@ -1,0 +1,90 @@
+{% extends 'main/shop.html' %}
+{% load static %}
+{% block title_page %}
+  <title>Магазин</title>
+{% endblock title_page %}
+{% block content %}
+  {% if user.is_authenticated %}
+
+
+<section class="main-section paddind" id="Portfolio">
+  <!--main-section-start-->
+    <!-- <a class="btn btn-outline-secondary" style="position: absolute; float: right; margin: 0;">Регистрация</a> -->
+    <!-- <a class="btn btn-outline-secondary" style="position: absolute; float: right; margin: 0;">Вход</a> -->
+    <h2>Каталог</h2>
+    <h6>У нас большой асортимент товаров.</h6>
+    <div class="portfolioFilter">
+      <ul class="Portfolio-nav">
+        <li><a href="#" data-filter="*" class="current">Все</a></li>
+        <li><a href="#" data-filter=".phone">Смартфоны</a></li>
+        <li><a href="#" data-filter=".laptop">Ноутбуки</a></li>
+        <li><a href="#" data-filter=".pc">Компьютеры</a></li>
+        <li><a href="#" data-filter=".accesoires">Аксессуары</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="portfolioContainer">
+
+
+    {% for post in pr %}
+       {% if post.group == "phone" %}
+          <div class=" Portfolio-box phone" style="height:400px"> <!-- Смартфоны -->
+            <a href="img/Portfolio-pic3.jpg"><img src="{{ post.img.url }}" alt=""></a>
+            <h3>{{ post.name }}</h3>
+              {% if post.availability %}
+                <p>Цена: {{ post.price }} byn</p>
+                <button onclick="window.location.href = {% url 'exit' %}" type="submit" class="btn btn-outline-info">Добавить<br>в корзину</button>
+              {% else %}
+                <p>Нет в наличии</p>
+              {% endif %}
+          </div>
+       {% elif post.group == "pc" %}
+        <div class=" Portfolio-box pc" style="height:400px"> <!-- Компьютеры -->
+          <a href="img/Portfolio-pic1.jpg"><img src="{{ post.img.url }}" alt=""></a>
+          <h3>{{ post.name }}</h3>
+            {% if post.availability %}
+                <p>Цена: {{ post.price }} byn</p>
+                <button onclick="window.location.href = {% url 'exit' %}" type="submit" class="btn btn-outline-info">Добавить<br>в корзину</button>
+            {% else %}
+                <p>Нет в наличии</p>
+            {% endif %}
+
+        </div>
+       {% elif post.group == "laptop" %}
+          <div class="Portfolio-box laptop" style="height:400px"> <!-- Ноутбуки -->
+            <a href="img/Portfolio-pic2.jpg"><img src="{{ post.img.url }}" alt=""></a>
+            <h3>{{ post.name }}</h3>
+              {% if post.availability %}
+                <p>Цена: {{ post.price }} byn</p>
+                <button name="batt" type="submit" class="btn btn-outline-info">Добавить<br>в корзину</button>
+
+              {% else %}
+                <p>Нет в наличии</p>
+              {% endif %}
+
+          </div>
+       {% else %}
+          <div class=" Portfolio-box accesoires" style="height:400px"> <!-- Аксессуары -->
+            <a href="img/Portfolio-pic4.jpg"><img src="{{ post.img.url }}" alt=""></a>
+            <h3>{{ post.name }}</h3>
+              {% if post.availability %}
+                <p>Цена: {{ post.price }} byn</p>
+                <button onclick="window.location.href = {% url 'exit' %}" type="submit" class="btn btn-outline-info">Добавить<br>в корзину</button>
+              {% else %}
+                <p>Нет в наличии</p>
+              {% endif %}
+          </div>
+        {% endif %}
+    {% endfor %}
+
+  </div>
+</section>
+  {% else %}
+    <div style="position: absolute; right: 50%; transform: translateX(50%); margin-top: 30px;">
+      <a href = "{% url 'regis_page' %}" type="submit" class="btn btn-outline-info">Регистрация</a>
+      <a href = "{% url 'auth_page' %}" type="submit" class="btn btn-outline-info">Вход</a>
+      <h2 class="container" style="margin-top:200px">Для просмотра товаров необходимо авторизоваться</h2>
+    </div>
+  {% endif %}
+{% endblock content %}
