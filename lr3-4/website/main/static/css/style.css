@@ -97,8 +97,9 @@ p{
 
 .header{
 	text-align:center;
-	background:url('../img/pw_maze_black_2X.png') left top repeat;
-	padding:280px 0;
+	background:url('../img/back.png') ;
+	padding:180px 0;
+
 }
 .logo{
 	width:130px;
@@ -213,7 +214,7 @@ color: #fff;
 }
 
 .main-section{
-	padding:90px 0 110px;
+	padding:40px 0 0;
 }
 
 
@@ -275,7 +276,7 @@ color: #fff;
 	line-height:38px;
 	font-family: 'FontAwesome';
 	font-size:38px;
-	color:#777777;
+	color:#93e677;
 	font-style:normal;
 }
 .featured-box-col2{ overflow:hidden;}
@@ -340,7 +341,7 @@ color: #fff;
 	-webkit-transition:all 0.3s ease-in-out;
 }
 .Portfolio-nav li a:hover{
-	background:#7cc576;
+	background:#c4c276;
 	color:#fff;
 	text-decoration:none;
 }
@@ -353,7 +354,7 @@ color: #fff;
 .Portfolio-box{
 	text-align:center;
 	margin-bottom:30px;
-	height:350px;
+	height:400px;
 	width:350px;
 	overflow:hidden;
 	float:left;
@@ -371,7 +372,7 @@ color: #fff;
 }
 
 .Portfolio-nav li a.current{
-	background:#7cc576;
+	background:#7678c4;
 	color:#fff;
 	text-decoration:none;
 }
@@ -590,13 +591,13 @@ border: 2px solid #fff;
 
 /* Talk Business
 ---------------------------------*/
-.business-talking{
-	background:url('../img/section-bg2.jpg') top center no-repeat;
+.information-section {
+	background:url('../img/back2.png') top center no-repeat;
 	background-size:cover;
 	padding:60px 0 10px;
 	text-align:center;
 }
-.business-talking h2{
+.information-section h2{
 	font-family: 'Montserrat', sans-serif;
 	font-weight:700;
 	padding:0;
