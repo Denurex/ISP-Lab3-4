@@ -1,0 +1,25 @@
+version: '3.1'
+
+services:
+
+  web:
+    container_name: site
+    image: app:django_app
+    build: ./website
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./website:/app/shop
+
+  db:
+    container_name: db_mysql
+    image: mysql:8.0.29
+    ports:
+      - "30000:3306"
+
+    environment:
+      MYSQL_ROOT_PASSWORD: '12345678'
+      MYSQL_DATABASE: 'dbSite'
+
