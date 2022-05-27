@@ -1,0 +1,157 @@
+{% extends 'main/base.html' %}
+{% block title %}
+  <title>Главная страница</title>
+{% endblock %}
+
+
+{% block content %}
+<header class="header" id="header">
+    <!--header-start-->
+    <div class="container">
+      <figure class="logo">
+        <a href="#"><img src="/static/img/logo3.png" alt=""></a>
+      </figure>
+      <h1 class="container">Добро пожаловать в наш магазин</h1><br><br>
+      <a class="link" href="#service">Начнем</a>
+    </div>
+  </header>
+  <!--header-end-->
+  <section class="main-section" id="service">
+    <!--main-section-start-->
+    <div class="container">
+      <h2>Категории</h2><br><br>
+        <div class="container" style="margin-left:450px; margin-top:50px">
+          <div class="service-list">
+            <div class="service-list-col1">
+              <i class="fa fa-mobile" style="margin-left:10px"></i>
+            </div>
+            <div class="service-list-col2" >
+              <h3>Смартфоны</h3>
+              <p>Phone</p>
+            </div>
+          </div>
+          <div class="service-list">
+            <div class="service-list-col1">
+              <i class="fa fa-laptop"></i>
+            </div>
+            <div class="service-list-col2">
+              <h3>Ноутбуки</h3>
+              <p>Laptop</p>
+            </div>
+          </div>
+          <div class="service-list">
+            <div class="service-list-col1">
+              <i class="fa fa-desktop"></i>
+            </div>
+            <div class="service-list-col2">
+              <h3>Компьютеры</h3>
+              <p>PC</p>
+            </div>
+          </div>
+          <div class="service-list">
+            <div class="service-list-col1">
+              <i class="fa fa-plug"></i>
+            </div>
+            <div class="service-list-col2">
+              <h3>Аксессуары</h3>
+              <p>Accessories<p>
+            </div>
+          </div>
+
+        </figure>
+
+      </div>
+    </div>
+  </section>
+  <!--main-section-end-->
+  <section class="main-section alabaster">
+    <!--main-section alabaster-start-->
+    <div class="container">
+      <div class="row">
+        <figure class="col-lg-5 col-sm-4">
+          <img src="/static/img/logo3.png" style="height:300px; weight:300px; margin-top:100px" alt="">
+        </figure>
+        <div class="col-lg-7 col-sm-8 featured-work">
+          <h2>Наши плюсы</h2>
+          <div class="featured-box" style="margin-top:100px">
+            <div class="featured-box-col1">
+              <i class="fa fa-magic" ></i>
+            </div>
+            <div class="featured-box-col2">
+              <h3>Высокое качество</h3>
+              <p>Только оригинальная техника</p>
+            </div>
+          </div>
+          <div class="featured-box">
+            <div class="featured-box-col1">
+              <i class="fa fa-gift"></i>
+            </div>
+            <div class="featured-box-col2" style="margin-top:50px">
+              <h3>Бонусы</h3>
+              <p>При каждой покупке 10% от суммы товара вернем на бонусную карту</p>
+            </div>
+          </div>
+          <div class="featured-box">
+            <div class="featured-box-col1">
+              <i class="fa fa-dashboard"></i>
+            </div>
+            <div class="featured-box-col2" style="margin-top:50px">
+              <h3>Быстрая доставка</h3>
+              <p>Доставка в течении 3-х дней по всей Беларуси</p>
+            </div>
+          </div>
+          <a class="Learn-More" href="#">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--main-section alabaster-end-->
+
+  <!--main-section client-part-end-->
+
+  <!--c-logo-part-end-->
+
+  <!--main-section team-end-->
+  <section class="information-section" style="margin-top:50px">
+    <!--business-talking-start-->
+    <div class="container">
+      <h2>Contact info</h2>
+    </div>
+  </section>
+  <!--business-talking-end-->
+  <div class="container">
+    <section class="main-section contact" id="contact">
+
+      <div class="row" >
+        <div class="col-lg-6 col-sm-7" style="margin-top:30px">
+          <div class="contact-info-box address clearfix">
+            <h3><i class=" fa fa-binoculars"></i>Адресс:</h3>
+            <span>ул. Пушкина<br>Дом калатушкина</span>
+          </div><br>
+          <div class="contact-info-box phone clearfix">
+            <h3><i class="fa fa-phone"></i>Телефоны:</h3>
+            <span>+375 (29) 345-45-28 <br>+375 (44) 555-73-45</span>
+          </div>
+          <div class="contact-info-box email clearfix">
+            <h3><i class="fa fa-pencil"></i>email:</h3>
+            <span>heko@fd.com</span>
+          </div>
+          <div class="contact-info-box hours clearfix">
+            <h3><i class="fa fa-clock-o"></i>Время работы:</h3>
+            <span>
+              <strong>Пн - пт:</strong> 7:00 - 18:00<br>
+              <strong>Сб - вс:</strong> 10:00 - 17:00
+            </span>
+          </div>
+        </div>
+        <div class="col-lg-6 col-sm-5">
+          <div class="form">
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+  </div>
+{% endblock %}

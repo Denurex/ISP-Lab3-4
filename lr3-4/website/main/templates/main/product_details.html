@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+<title xmlns="http://www.w3.org/1999/html">{{ product.name }}</title>
+{% endblock %}
+
+
+{% block content %}
+<div class="row" style="margin-top:20px">
+
+    <figure class="col-lg-4 col-sm-4">
+       <img src="{% if product.img %}{{ product.img.url }}{% else %}{% static 'img/no_image.jpg' %}{% endif %}">
+    </figure>
+
+    <div class="col-lg-7 col-sm-4 featured-work">
+
+        <h4 style="font-size:20px; color:#222222;">{{ product.name }}</h4><br>
+
+        <p style="color:#222222;">{{ product.description }} <br>
+        <p style="color:#7cc576;">{% if product.availability %}В наличии {% else %} Нет в наличии {% endif %}</p>
+        <p class="price" style="font-size:18px; margin-top:20px; margin-bottom:20px; color:#222222;">{{ product.price }} byn</p>
+        {% if product.availability %}
+            <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                {{ cart_product_form }}
+                {% csrf_token %}
+                <input class="btn btn-outline-primary" type="submit" value="В корзину">
+            </form>
+        {% else %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+</html>

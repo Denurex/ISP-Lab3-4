@@ -1,41 +1,31 @@
 """Aplication logic"""
 
-from django.shortcuts import render, redirect
-from django.contrib import messages
-from django.contrib.auth.decorators import login_required
-from .models import Comment, Product
-from .forms import CommentForm, UserRegistrationn
+from django.shortcuts import get_object_or_404, render
+
+from shopcart.forms import CartAddProductForm
+
+from .models import Product
 
 
 def index(request):
-    tasks = Comment.objects.all()
-    return render(request, 'main/base.html')
-
-
-def create(request):
-    error = ''
-    if request.method == 'POST':
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('main_page')
-        else:
-            error = 'GG'
+    return render(request, "main/main.html")
 
 
 def check_product(request):
-    product = Product.objects.all()
-    return render(request, 'main/product.html')
+    return render(request, "main/product.html")
 
 
 def shop(request):
     product = Product.objects.all()
-    context = {
-        'pr': product
-    }
-    return render(request, 'main/product.html', context)
+    context = {"pr": product}
+    return render(request, "main/product.html", context)
 
 
-def shop_cart(request):
-
-    return render(request, 'main/shopping_cart.html')
+def product_detail(request, id):
+    product = get_object_or_404(Product, id=id)
+    cart_product_form = CartAddProductForm()
+    return render(
+        request,
+        "main/product_details.html",
+        {"product": product, "cart_product_form": cart_product_form},
+    )
