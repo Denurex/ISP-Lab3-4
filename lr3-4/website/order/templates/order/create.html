@@ -1,0 +1,35 @@
+{% extends "main/base.html" %}
+{% block title %}
+    <title>Заказ</title>
+{% endblock %}
+
+
+{% block content %}
+<body class="text-center">
+<div class="container" style="margin-top:70px">
+
+    <h1 style="color:#222222;">Ваш заказ</h1>
+
+        {% for item in cart %}
+            <p>{{ item.quantity }}x {{ item.product.name }}</p>
+        {% endfor %}
+
+
+    <p>Итог: ${{ cart.get_total_price }}</p>
+
+    <div class=" w-25 mb-2 container form-group" >
+
+    <form  method="post" >
+
+        {{ form.as_p }}
+        <button class="btn btn-lg btn-primary container form-group" style="width:250px; margin-top:10px" type="submit">Подтвердить заказ</button>
+        {% csrf_token %}
+    </form>
+
+
+    </div>
+</div>
+
+
+</body>
+{% endblock %}
